@@ -1,0 +1,85 @@
+h1{
+	font-size:48px;
+    font-family:arial,sans-serif;
+	margin:10px;
+}
+p{
+	font-size:20px;
+	margin:10px;
+}
+.navbar{
+	background-color: white;
+	float: right;
+	margin-top: 10px;
+}
+.navbar ul li{
+	display: inline;
+	color: #30669c;
+}
+.navbar ul li a:hover{
+	color: #18AFE0;
+}
+.navbar a{
+	text-decoration:none;	
+	font-family:sans-serif;
+	color:#222222;
+	padding:25px 5px 10px 8px;
+	font-size:15px;
+	vertical-align:center;
+	align:right;
+	margin:10px;
+}
+.navbar a:hover{
+	color:red;
+}
+.general {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    padding-top: 85px;
+    background-color:white;
+}
+.cart {
+    width: 300px;
+    height:auto;
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #e8e8e8;
+    font-family:arial;
+    border-radius: 3px;
+    background-color: #e8e8e8;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #cc0000;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    margin-right:20px;    
+}
+.item, .item-chk{
+    font-size: 12px;
+    width:200px;
+}
+#itemx{
+    font-size: 12px;
+    width:200px;
+    margin-right:20px;  
+}
+#add{
+    font-size:16px;
+    height: 24px;
+    width: 90px;
+    background-color:yellow;
+    margin: 12px;
+}
+#rem{
+    font-size:16px;
+    height: 24px;
+    width: 200px;
+    background-color:yellow;
+    margin: 12px;
+}

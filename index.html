@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Shopping List</title>
+  <link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css"> 
+	<link rel="stylesheet" type="text/css" href="main.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>  
+  <script src="cart.js" type="text/javascript"></script> 
+</head>
+<body>
+	<div class="navbar">
+    <ul>
+  		<li><a href="https://dl.dropboxusercontent.com/u/3285236/Goodle/index.html">Google</a></li>
+  		<li><a href="https://dl.dropboxusercontent.com/u/3285236/37sig/index.html">37 Signals</a></li>
+      <li><a href="http://paulkav1.github.io/huckle/">Hot or Not</a></li>
+      <li><a href="http://www.noodle.org">Noodle</a></li>            
+    </ul>           
+	</div>
+  <div class="general">
+    <form action="cart" onsubmit="return formCheck()">
+    <div class="cart"> 
+        <p class="title">Shopping List</p>
+      <input id="itemx" type="text" placeholder="enter value">
+        <p id="items">0 items</p>
+        <p id="checked">0 checked</p> 
+        <div id="ct"></div>    
+    </div>           
+    <div>
+      <input id="add" type="submit" name="add" value="Refresh">
+      <input id="rem" type="submit" name="rem" value="Remove Checked Items">     
+    </div>                   
+</form>
+</body>
+</html>
