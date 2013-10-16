@@ -35,11 +35,7 @@ $(document).ready(function(){
             qx = 4;
         }                 
 
-        if (qx == questions[this_q - 1].correct)
-            right_answer();
-        else{
-            wrong_answer();
-        }
+        score_quiz();
         
         $('#last').html('last: ' + last_score);
         $('#total').html('total: ' + total_score);
@@ -47,30 +43,27 @@ $(document).ready(function(){
         $(".answer").prop("checked", false);      
     });
 
-    function right_answer(){
-        last_score = 'Right';
-        total_score += 1;
-        this_q += 1;
-        show_quiz(this_q - 1);
-    };
-
-    function wrong_answer(){
-        last_score = 'Wrong';
-        this_q += 1;
-        show_quiz(this_q - 1);
+    function score_quiz(){
+        if (qx == questions[this_q - 1].correct){
+            last_score = 'Right';
+            total_score += 1;
+        }else{
+            last_score = 'Wrong';
+        }
+        this_q += 1;        
+        if (this_q > questions.length)
+            show_final();
+        else
+            show_quiz(this_q - 1);      
     };
 
     function show_quiz(q){
-        if (q == questions.length){
-            show_final();
-        }else{
-            $('#s0').html(questions[q].question);
-            $('#s1').html(questions[q].choices[0]);
-            $('#s2').html(questions[q].choices[1]);
-            $('#s3').html(questions[q].choices[2]);
-            $('#s4').html(questions[q].choices[3]);  
-            $('#s5').html(questions[q].choices[4]);
-        }      
+        $('#s0').html(questions[q].question);
+        $('#s1').html(questions[q].choices[0]);
+        $('#s2').html(questions[q].choices[1]);
+        $('#s3').html(questions[q].choices[2]);
+        $('#s4').html(questions[q].choices[3]);  
+        $('#s5').html(questions[q].choices[4]);   
     };
 
     function show_final(){
