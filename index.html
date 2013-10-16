@@ -15,33 +15,30 @@
       <li><a href="http://paulkav1.github.io/cart/">Shopping List</a></li>  
       <li><a href="http://paulkav1.github.io/huckle/">Hot or Not</a></li>      
       <li><a href="https://dl.dropboxusercontent.com/u/3285236/37sig/index.html">37 Signals</a></li>       
-      <li><a href="https://dl.dropboxusercontent.com/u/3285236/Goodle/index.html">Google</a></li> 
       <li><a href="http://nooru.herokuapp.com/gooru/">Education Search</a></li>             
       <li><a href="http://www.noodle.org">Noodle</a></li>            
     </ul>           
 	</div>
-  <div>
-    <h2 class="logo">Quizster</h2>
-  </div>
-  <div class="page">
-    <div class="scores">
-      <p>Q3 correct!</p>
-      <p>2 / 3 [66%]</p>
-      <p>Q 4 of 5</p>
-    </div>    
-    <form action="quiz" onsubmit="return formCheck()">
-    <div class="content"> 
+    <div>
+      <h2 class="logo">Quizster</h2>
+    </div>        
+  <div class="page">      
+    <form id="quiz" action="quiz" onsubmit="return formCheck()">
         <div><h1 class="title"></h1></div>
         <div><span id="s0">Question</span><p></p></div>
         <div><input id="r1" class="answer" type="radio" name="r"><span id="s1">Answer 1</span></div>
         <div><input id="r2" class="answer" type="radio" name="r"><span id="s2">Answer 2</span></div>
         <div><input id="r3" class="answer" type="radio" name="r"><span id="s3">Answer 3</span></div>
         <div><input id="r4" class="answer" type="radio" name="r"><span id="s4">Answer 4</span></div> 
-        <div><input id="r5" class="answer" type="radio" name="r"><span id="s5">Answer 5</span></div>
-    </div> 
-  </div>                       
-</form>
-<a id="gnu" href="https://gnu.org/gnu30"><img src="https://static.fsf.org/nosvn/misc/GNU_30th_badge.png" alt="[ Celebrate 30 years of GNU! ]" /></a>
-<div>
+        <div><input id="r5" class="answer" type="radio" name="r"><span id="s5">Answer 5</span></div>                     
+    </form> 
+     <div class="scores">
+      <p id="last">Q3 correct!</p>
+      <p id="total">2 / 3 [66%]</p>
+      <p id="this">Q 4 of 5</p>
+    </div>       
+  <div id="gnu">   
+    <a href="https://gnu.org/gnu30"><img src="https://static.fsf.org/nosvn/misc/GNU_30th_badge.png" alt="[ Celebrate 30 years of GNU! ]" /></a></div>
+  </div>
 </body>
 </html>

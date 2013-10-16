@@ -1,46 +1,80 @@
-//This app allows the user to take a multiple choice quiz on content of your choosing.
-//Lead the user through a set of questions, one at a time, with new answers presented only after they have answered the current one. 
-// You should use jQuery to move between questions as the user enters their response
-//Allow the user to input his or her response to each questions with radio buttons
-//When the user answers the last question, the quiz should show his or her overall score
-//Let the user know:
-// where in the quiz they are at each step (i.e. “Question 3 of 5) 
-// their score so far 
-// if their previous response was correct 
-
 $(document).ready(function(){
 	var title = "US Geography";
 	var questions = [
 	{question: "What is the capital of the US?", choices: ["Washington DC", "NYC", "Silicon Valley", "Kansas City", "London"], correct:0},
-	{question: "What is the biggest state in the US?", choices: ["Texas", "Florida", "California", "Illinois", "New York"], correct:0}	
+	{question: "What is the biggest state in the US?", choices: ["Texas", "Florida", "California", "Illinois", "New York"], correct:2},
+    {question: "What is the oldest city in the US?", choices: ["Washington DC", "Boston", "Santa Fe", "Kansas City", "St Augustine"], correct:4},
+    {question: "What is the northern neighbor of the US?", choices: ["Alaska", "Newfoundland", "Mexico", "Canada", "Norway"], correct:3},      	
+    {question: "What is the biggest river in the US?", choices: ["Potomac", "Mississippi", "Rio Grande", "Delaware", "Amazon"], correct:1} 
 	];
 
+    var last_score = 0
+    var total_score = 0
+    var this_q = 1
+
 	$('.title').html(title);
-    $('#s0').html(questions[0].question);
-    $('#s1').html(questions[0].choices[0]);
-    $('#s2').html(questions[0].choices[1]);
-    $('#s3').html(questions[0].choices[2]);
-    $('#s4').html(questions[0].choices[3]);  
-    $('#s5').html(questions[0].choices[4]);
+    show_quiz(0);
+    $('#last').html('last: ' + last_score);
+    $('#total').html('total: ' + total_score);
+    $('#this').html('this: ' + this_q); 
 
 	$(".answer").change(function(){
 		if ($("#r1").is(":checked")){
-            alert('r1');
+            qx = 0;
         }
         else if ($("#r2").is(":checked")){
-            alert('r2');
+            qx = 1;
         }
         else if ($("#r3").is(":checked")){
-            alert('r3');
+            qx = 2;
         }
         else if ($("#r4").is(":checked")){
-            alert('r4');
+            qx = 3;
         }
         else if ($("#r5").is(":checked")){
-            alert('r5');
+            qx = 4;
         }                 
+
+        if (qx == questions[this_q - 1].correct)
+            right_answer();
         else{
-        	alert('other');
+            wrong_answer();
         }
+        
+        $('#last').html('last: ' + last_score);
+        $('#total').html('total: ' + total_score);
+        $('#this').html('this: ' + this_q);
+        $(".answer").prop("checked", false);      
     });
+
+    function right_answer(){
+        last_score = 'Right';
+        total_score += 1;
+        this_q += 1;
+        show_quiz(this_q - 1);
+    };
+
+    function wrong_answer(){
+        last_score = 'Wrong';
+        this_q += 1;
+        show_quiz(this_q - 1);
+    };
+
+    function show_quiz(q){
+        if (q == questions.length){
+            show_final();
+        }else{
+            $('#s0').html(questions[q].question);
+            $('#s1').html(questions[q].choices[0]);
+            $('#s2').html(questions[q].choices[1]);
+            $('#s3').html(questions[q].choices[2]);
+            $('#s4').html(questions[q].choices[3]);  
+            $('#s5').html(questions[q].choices[4]);
+        }      
+    };
+
+    function show_final(){
+        $('#quiz').remove();
+        $('.page').html('<h1>You scored ' + total_score + ' out of 5</h1>');
+    };
 })
