@@ -5,7 +5,10 @@ h1{
 }
 p{
 	font-size:20px;
-	margin:10px;
+	margin:20px;
+}
+input{
+    margin:10px;
 }
 .navbar{
 	background-color: white;
@@ -32,19 +35,34 @@ p{
 .navbar a:hover{
 	color:red;
 }
-.general {
-    text-align: center;
+.page {
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
     width: 960px;
     padding-top: 85px;
     background-color:white;
 }
-.cart {
+.content{
+    width:70%;
+    verticl-align:center;
+}
+.scores{
+    background-color: red;
+    color: white;
+    float:right;
+    border:1px solid yellow;
+    border-radius:8px;
+    height:180px;
+    width: 120px;
+    font-size:24px;
+}
+.quiz {
     width: 300px;
     height:auto;
     display: inline-block;
     position: relative;
+    float:left;
     margin: 0 10px;
     padding: 10px;
     border: 1px solid #e8e8e8;
@@ -53,33 +71,34 @@ p{
     background-color: #e8e8e8;
 }
 .title {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
     color: #cc0000;
     margin-top: 14px;
     margin-bottom: 14px;
     margin-right:20px;    
 }
-.item, .item-chk{
-    font-size: 12px;
-    width:200px;
+#s0, #s1, #s2, #s3, #s4, #s5{
+    font-family: arial, sans-serif;
+    font-size:24px;
+    margin:12px;
 }
-#itemx{
-    font-size: 12px;
-    width:200px;
-    margin-right:20px;  
+.answer{
+    font-family: arial, sans-serif;    
+    font-size: 24px;
+    margin:12px;
+}
+.logo{
+    font-size:36px;
+    font-style:bold;
+    margin:12px;
+    font-family:serif;
+    color:#FE2266;
 }
 #add{
     font-size:16px;
     height: 24px;
     width: 90px;
-    background-color:yellow;
-    margin: 12px;
-}
-#rem{
-    font-size:16px;
-    height: 24px;
-    width: 200px;
-    background-color:yellow;
+    border-radius:3px;
     margin: 12px;
 }
