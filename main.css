@@ -83,6 +83,10 @@ input{
     font-size:24px;
     margin:12px;
 }
+#gnu{
+    float:right;
+    margin:30px;
+}
 .answer{
     font-family: arial, sans-serif;    
     font-size: 24px;
