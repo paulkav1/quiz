@@ -8,9 +8,9 @@ $(document).ready(function(){
     {question: "What is the biggest river in the US?", choices: ["Potomac", "Mississippi", "Rio Grande", "Delaware", "Amazon"], correct:1} 
 	];
 
-    var last_score = 0
-    var total_score = 0
-    var this_q = 1
+    var last_score = 0;
+    var total_score = 0;
+    var this_q = 1;
 
 	$('.title').html(title);
     show_quiz(0);
@@ -33,7 +33,7 @@ $(document).ready(function(){
         }
         else if ($("#r5").is(":checked")){
             qx = 4;
-        }                 
+        };                 
 
         score_quiz();
         
@@ -49,13 +49,15 @@ $(document).ready(function(){
             total_score += 1;
         }else{
             last_score = 'Wrong';
-        }
-        this_q += 1;        
+        };
+
+        this_q += 1;
+
         if (this_q > questions.length)
             show_final();
         else
             show_quiz(this_q - 1);      
-    };
+    }
 
     function show_quiz(q){
         $('#s0').html(questions[q].question);
@@ -64,10 +66,10 @@ $(document).ready(function(){
         $('#s3').html(questions[q].choices[2]);
         $('#s4').html(questions[q].choices[3]);  
         $('#s5').html(questions[q].choices[4]);   
-    };
+    }
 
     function show_final(){
         $('#quiz').remove();
         $('.page').html('<h1>You scored ' + total_score + ' out of 5</h1>');
-    };
-})
+    }
+});
